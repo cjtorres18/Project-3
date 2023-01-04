@@ -1,0 +1,36 @@
+img {
+  height: 200px;
+  width: 200px;
+}
+
+#title-1 {
+  color: beige;
+  margin: 25px;
+}
+
+
+#title-1-container {
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+#empty-container {
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+#empty-title {
+  margin: 25px;
+  padding: 25px;
+}
+
+#product-container {
+  border: solid black 2px;
+  margin: 10px;
+  height: 200px;
+  background-color:beige;
+}
+
+#add-item {
+  width: 500px;
+}
