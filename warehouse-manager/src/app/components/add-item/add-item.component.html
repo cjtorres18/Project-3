@@ -1,1 +1,30 @@
-<p>add-item works!</p>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <p class="h3 fw-bold">Add Item</p>
+    </div>
+  </div>
+</div>
+
+<!-- add item form -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <form>
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="Item ID">
+        </div>
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="Item Name">
+        </div>
+        <div class="mb-2">
+          <input type="number" class="form-control" placeholder="Quantity">
+        </div>
+        <div class="mb-2">
+          <input type="submit" value="Add" class="btn btn-secondary">
+          <a routerLink="/warehouse1/inventory" class="btn btn-danger ms-2">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

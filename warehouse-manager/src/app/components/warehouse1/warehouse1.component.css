@@ -1,6 +1,8 @@
 img {
   height: 200px;
   width: 200px;
+  padding: 0;
+  margin: 0;
 }
 
 #title-1 {
@@ -33,4 +35,25 @@ img {
 
 #add-item {
   width: 500px;
+}
+
+.card-image {
+  width: 100px;
+  height: auto;
+}
+
+.list-group {
+  margin: 0;
+}
+
+#info-container {
+  margin-left: 0px;
+  padding: 0;
+
+}
+
+#img-container {
+  padding:0;
+  margin: 0;
+  max-width: 115px;
 }

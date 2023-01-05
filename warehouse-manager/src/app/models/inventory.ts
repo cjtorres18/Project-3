@@ -4,5 +4,5 @@ export interface Inventory {
   photo : string;
   brand : string;
   description : string;
-  amount : number;
+  Quantity : number;
 }
