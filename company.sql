@@ -3,14 +3,14 @@ USE company_sql;
 
 CREATE TABLE warehouses (
 address VARCHAR(255) NOT NULL,
-total_capacity INT(32) DEFAULT 500,
+total_capacity INT(32),
 warehouse_id INT(3) NOT NULL,
 PRIMARY KEY (warehouse_id)
 );
 
 INSERT INTO warehouses (address, total_capacity, warehouse_id) VALUES 
-		('320 Fowler Street, Lynbrook, New York', 500, 1),
-        ('31 Spooner Street, Quahog, Rhode Island', 500, 2);
+		('320 Fowler Street, Lynbrook, New York', 10000, 1),
+        ('31 Spooner Street, Quahog, Rhode Island', 10000, 2);
 SELECT * FROM warehouses;
 
 CREATE TABLE products (
