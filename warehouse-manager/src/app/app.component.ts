@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { InventoryService } from './inventory.service';
+import { InventoryService } from './components/services/inventory.service';
 import { InventoryItem } from './inventoryItem';
 
 
