@@ -10,7 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { Warehouse1Component } from './components/warehouse1/warehouse1.component';
 import { Warehouse2Component } from './components/warehouse2/warehouse2.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [InventoryService],
   bootstrap: [AppComponent]

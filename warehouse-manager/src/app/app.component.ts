@@ -1,5 +1,6 @@
-import { HttpErrorResponse } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { InventoryService } from './inventory.service';
 import { InventoryItem } from './inventoryItem';
 
@@ -22,12 +23,12 @@ export class AppComponent implements OnInit{
 
   public getInventoryItems(): void {
     this.inventoryService.getInventory().subscribe(
-      (response: InventoryItem[]) => {
-        this.inventoryItems = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
+      (Response: InventoryItem[]) => {
+        this.inventoryItems = Response;
       }
     );
   }
+
+
+
 }
