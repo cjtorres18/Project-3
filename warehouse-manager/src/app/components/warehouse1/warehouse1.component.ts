@@ -58,9 +58,10 @@ export class Warehouse1Component implements OnInit{
   console.log("Inside the add method")
 }
 
-
-
-
+deleteInventoryItem(inventoryItem: InventoryItem){
+  const index = this.inventoryItems.indexOf(inventoryItem)
+  this.inventoryService.deleteInventory(index)
+}
 
   public onOpenModal(inventoryItem: InventoryItem, mode: string): void {
     const container = document.getElementById('main-container')
