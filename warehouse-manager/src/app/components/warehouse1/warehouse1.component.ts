@@ -16,6 +16,14 @@ export class Warehouse1Component implements OnInit{
   inventoryItems!: InventoryItem[];
   editForm!: FormGroup;
 
+  itemToUpdate: InventoryItem = {
+    id: 0,
+    name: "",
+    brand: "",
+    imageUrl: "",
+    barcode: ""
+  }
+
 
   constructor(private inventoryService: InventoryService,
               private fb: FormBuilder
@@ -48,15 +56,47 @@ export class Warehouse1Component implements OnInit{
     console.log("Inside the add method")
   }
 
-  editInventoryItem(inventoryItem: InventoryItem): void {
-  this.inventoryService.updateInventoryItem(inventoryItem).subscribe(
-    (response: InventoryItem) => {
-      console.log(response);
-      this.getInventory();
-    }
-  )
-  console.log("Inside the add method")
-}
+
+  editInventoryItem(): void {
+    this.inventoryService.updateInventoryItem(this.itemToUpdate).subscribe(
+      (response: InventoryItem) => {
+        console.log(response);
+        this.getInventory();
+      }
+    )
+    console.log("Inside the edit method")
+  }
+
+  deleteInventoryItem(): void {
+    this.inventoryService.deleteInventory(this.itemToUpdate).subscribe(
+      (response: InventoryItem) => {
+        console.log(response);
+        this.getInventory();
+      }
+    )
+    console.log("Inside the edit method")
+  }
+
+  // deleteInventoryItem(inventoryItem: InventoryItem){
+  //   const index = this.inventoryItems.indexOf(inventoryItem)
+  //   this.inventoryService.deleteInventory()
+  // }
+
+  sendToUpdateModal(inventoryItem: InventoryItem) {
+    this.itemToUpdate.id = inventoryItem.id;
+    this.itemToUpdate.brand = inventoryItem.brand;
+    this.itemToUpdate.name = inventoryItem.name;
+    this.itemToUpdate.imageUrl = inventoryItem.imageUrl;
+    this.itemToUpdate.barcode = inventoryItem.barcode;
+  }
+
+  sentToDeleteModal(inventoryItem: InventoryItem) {
+    this.itemToUpdate.id = inventoryItem.id;
+    this.itemToUpdate.brand = inventoryItem.brand;
+    this.itemToUpdate.name = inventoryItem.name;
+    this.itemToUpdate.imageUrl = inventoryItem.imageUrl;
+    this.itemToUpdate.barcode = inventoryItem.barcode;
+  }
 
 
 

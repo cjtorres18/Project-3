@@ -32,7 +32,10 @@ export class InventoryService {
     return this.http.put<any>((this.apiServerUrl + "/inventoryItem/update") , inventoryItem).pipe(catchError(this.handleError))
   }
 
-  public deleteInventory(inventoryItemId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/inventoryItem/delete/${inventoryItemId}`)
+
+
+  public deleteInventory(inventoryItem: number): Observable<void> {
+    return this.http.delete<void>((this.apiServerUrl + "/inventoryItem/update"))
   }
 }
+
