@@ -54,7 +54,7 @@
                     </div>
                     <div class="d-flex gap-2 pt-4">
                       <!-- <button type="button" class="btn btn-primary btn-sm w-50"><i class="bx bx-message-square-dots me-1"></i> View</button> -->
-                      <button type="button" class="btn btn-primary btn-sm w-50" data-toggle="modal" data-target="#editItemModal">
+                      <button type="button" class="btn btn-primary btn-sm w-50" data-toggle="modal" data-target="#editItemModal" (click)="sendToUpdateModal(inventoryItem)">
                         Edit
                       </button>
                       <button type="button" class="btn btn-danger btn-sm w-50" data-toggle="modal" data-target="#deleteItemModal">
@@ -119,19 +119,16 @@
           <div class="modal-body">
             <form #editForm="ngForm">
               <div class="form-group">
-                <input class="form-control" type="hidden"   name="id" id="id" placeholder="id">
-              </div>
-              <div class="form-group">
                 <label for="name">Name</label>
-                <input class="form-control"   type="text" name="name" id="brand" placeholder="brand" required>
+                <input class="form-control"  [(ngModel)]="itemToUpdate.name" type="text" name="name" id="name" placeholder="name" required>
               </div>
               <div class="form-group">
                 <label for="brand">Brand</label>
-                <input class="form-control"   type="text" name="brand" id="brand" placeholder="brand" required>
+                <input class="form-control"  [(ngModel)]="itemToUpdate.brand" type="text" name="brand" id="brand" placeholder="brand" required>
               </div>
               <div class="form-group">
                 <label for="imageUrl">Image Url</label>
-                <input class="form-control"  name="imageUrl" type="text" id="imageUrl" placeholder="name">
+                <input class="form-control"  [(ngModel)]="itemToUpdate.imageUrl" name="imageUrl" type="text" id="imageUrl" placeholder="Image Url">
               </div>
               <div class="form-group">
                 <input class="form-control" type="hidden"   name="barcode" id="barcode" placeholder="name">
@@ -141,7 +138,7 @@
 
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" id="canel-update-button" data-dismiss="modal">Cancel</button>
-            <button (click)="editInventoryItem(editForm.value)" data-dismiss="modal" class="btn btn-primary">Update</button>
+            <button data-dismiss="modal" class="btn btn-primary" (click)="editInventoryItem()">Update</button>
 
           </div>
         </form>
