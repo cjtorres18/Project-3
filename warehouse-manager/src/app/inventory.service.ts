@@ -15,27 +15,27 @@ export class InventoryService {
 
   constructor(private http: HttpClient) { }
 
-  public getInventory(): Observable<any> {
-    return this.http.get<any>(`${this.apiServerUrl}/inventoryItem/all`)
+  public getInventory(warehouseId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/inventoryItem/all/` + warehouseId)
   }
 
   public addInventory(inventoryItem: any) {
     console.log(inventoryItem);
-    return this.http.post((this.apiServerUrl + "/inventoryItem/add"), inventoryItem).pipe(catchError(this.handleError))
+    return this.http.post((this.apiServerUrl + "/inventoryItem/add"), inventoryItem)
   }
 
-  handleError(error: HttpErrorResponse) {
-    return throwError(() => new Error('new error'))
-  }
+  // handleError(error: HttpErrorResponse) {
+  //   return throwError(() => new Error('new error'))
+  // }
 
   public updateInventoryItem(inventoryItem: InventoryItem): Observable<any> {
-    return this.http.put<any>((this.apiServerUrl + "/inventoryItem/update") , inventoryItem).pipe(catchError(this.handleError))
+    return this.http.put<any>((this.apiServerUrl + "/inventoryItem/update") , inventoryItem)
   }
 
 
 
-  public deleteInventory(inventoryItem: number): Observable<void> {
-    return this.http.delete<void>((this.apiServerUrl + "/inventoryItem/update"))
+  public deleteinventoryItem(id: number){
+    return this.http.delete(this.apiServerUrl + "/inventoryItem/delete?id=" + id)
   }
 }
 

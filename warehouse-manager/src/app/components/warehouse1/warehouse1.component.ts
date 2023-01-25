@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { InventoryService } from 'src/app/inventory.service';
 import { InventoryItem } from 'src/app/inventoryItem';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms'
@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class Warehouse1Component implements OnInit{
   title = 'warehouse-manager';
+  @Input()
+  warehouseId = 1;
   inventoryItems!: InventoryItem[];
   editForm!: FormGroup;
 
@@ -21,7 +23,17 @@ export class Warehouse1Component implements OnInit{
     name: "",
     brand: "",
     imageUrl: "",
-    barcode: ""
+    barcode: "",
+    warehouseId: 1
+  }
+
+  itemsToDelete: InventoryItem = {
+    id: 0,
+    name: "",
+    brand: "",
+    imageUrl: "",
+    barcode: "",
+    warehouseId: 1
   }
 
 
@@ -35,7 +47,7 @@ export class Warehouse1Component implements OnInit{
 
 
   public getInventory(): void {
-    this.inventoryService.getInventory().subscribe(
+    this.inventoryService.getInventory(this.warehouseId).subscribe(
       (response: InventoryItem[]) => {
         this.inventoryItems = response;
       },
@@ -46,7 +58,7 @@ export class Warehouse1Component implements OnInit{
 
     addInventory(addForm: NgForm): void {
       document.getElementById('add-inventory-button')?.click();
-      console.log(addForm)
+      // console.log(addForm)
     this.inventoryService.addInventory(addForm).subscribe(
       (response) => {
         console.log(response);
@@ -67,20 +79,16 @@ export class Warehouse1Component implements OnInit{
     console.log("Inside the edit method")
   }
 
-  deleteInventoryItem(): void {
-    this.inventoryService.deleteInventory(this.itemToUpdate).subscribe(
-      (response: InventoryItem) => {
-        console.log(response);
+  deleteInventoryItem() {
+    this.inventoryService.deleteinventoryItem(this.itemToUpdate.id).subscribe(
+      (response) =>{
+        console.log(response)
         this.getInventory();
       }
-    )
-    console.log("Inside the edit method")
-  }
 
-  // deleteInventoryItem(inventoryItem: InventoryItem){
-  //   const index = this.inventoryItems.indexOf(inventoryItem)
-  //   this.inventoryService.deleteInventory()
-  // }
+    );
+    console.log("inside the delete method")
+  }
 
   sendToUpdateModal(inventoryItem: InventoryItem) {
     this.itemToUpdate.id = inventoryItem.id;
@@ -88,6 +96,7 @@ export class Warehouse1Component implements OnInit{
     this.itemToUpdate.name = inventoryItem.name;
     this.itemToUpdate.imageUrl = inventoryItem.imageUrl;
     this.itemToUpdate.barcode = inventoryItem.barcode;
+    this.itemToUpdate.warehouseId = inventoryItem.warehouseId;
   }
 
   sentToDeleteModal(inventoryItem: InventoryItem) {

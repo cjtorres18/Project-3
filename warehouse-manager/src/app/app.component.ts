@@ -18,16 +18,16 @@ export class AppComponent implements OnInit{
   constructor(private inventoryService: InventoryService){}
 
   ngOnInit(): void {
-    this.getInventoryItems();
+    // this.getInventoryItems();
   }
 
-  public getInventoryItems(): void {
-    this.inventoryService.getInventory().subscribe(
-      (Response: InventoryItem[]) => {
-        this.inventoryItems = Response;
-      }
-    );
-  }
+  // public getInventoryItems(): void {
+  //   this.inventoryService.getInventory(this.warehouseId).subscribe(
+  //     (Response: InventoryItem[]) => {
+  //       this.inventoryItems = Response;
+  //     }
+  //   );
+  // }
 
 
 

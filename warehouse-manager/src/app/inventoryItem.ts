@@ -4,4 +4,5 @@ export interface InventoryItem {
   brand: string;
   imageUrl: string;
   barcode: string;
+  warehouseId: number;
 }

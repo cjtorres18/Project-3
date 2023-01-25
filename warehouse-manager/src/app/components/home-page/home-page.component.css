@@ -33,4 +33,28 @@ body{margin-top:20px;
       background-color: rgba(99,173,111,.1);
   }
 
+  #warehouse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
+  #warehouse-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  #select-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #warehouse-name2 {
+    display: flex;
+    justify-content: center;
+    margin-left: 45px;
+  }
