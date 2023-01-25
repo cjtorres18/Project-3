@@ -107,9 +107,10 @@ export class Warehouse1Component implements OnInit{
     this.itemToUpdate.barcode = inventoryItem.barcode;
   }
 
-
-
-
+deleteInventoryItem(inventoryItem: InventoryItem){
+  const index = this.inventoryItems.indexOf(inventoryItem)
+  this.inventoryService.deleteInventory(index)
+}
 
   public onOpenModal(inventoryItem: InventoryItem, mode: string): void {
     const container = document.getElementById('main-container')
