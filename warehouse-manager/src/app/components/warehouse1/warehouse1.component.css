@@ -81,3 +81,27 @@ body{margin-top:20px;
     max-width: 150px;
     max-height: 150px;
   }
+
+  footer {
+    position: relative;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/
+  height: 10%;
+  }
+
+  .footer-container {
+
+
+  }
+
+  .middle {
+    border-bottom: 1px solid rgb(241, 236, 236);
+  }
+
+  #add-button {
+    margin-top: 45px;
+    width: 250px;
+    height: 50px;
+  }
