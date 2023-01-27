@@ -1,0 +1,76 @@
+.card-title {
+  text-align: center;
+  margin: 15px;
+  font-size: 25px;
+}
+
+body{margin-top:20px;
+  background-color:#eee;
+  }
+  .card {
+      margin-bottom: 24px;
+      box-shadow: 0 2px 3px #e4e8f0;
+  }
+  .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: #fff;
+      background-clip: border-box;
+      border: 1px solid #eff0f2;
+      border-radius: 1rem;
+  }
+
+
+  a {
+      text-decoration: none!important;
+  }
+
+  .badge-soft-success {
+      color: #63ad6f !important;
+      background-color: rgba(99,173,111,.1);
+  }
+
+  #warehouse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #warehouse-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  #select-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #warehouse-name2 {
+    text-align: center;
+  }
+
+  footer {
+    position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/
+  height: 10%;
+  }
+
+  .footer-container {
+
+
+  }
+
+  .middle {
+    border-bottom: 1px solid rgb(241, 236, 236);
+  }
